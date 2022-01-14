@@ -7,6 +7,8 @@ new Vue({
             'https://unsplash.it/600/400?image=137',
             'https://unsplash.it/600/400?image=347',
             'https://unsplash.it/600/400?image=28',
+            'https://unsplash.it/600/400?image=38',
+            'https://unsplash.it/600/400?image=58',
         ],
         currentIndex: 0,
     },
@@ -18,5 +20,13 @@ new Vue({
         prevImg: function() {
             this.currentIndex = this.currentIndex <= 0 ? this.images.length-1 : this.currentIndex - 1;
         },
+        automaticChange: function() {
+            const clock = setInterval( () => {
+                this.currentIndex = this.currentIndex >= this.images.length - 1 ? 0 : this.currentIndex + 1;
+            },2000)
+        },
     },
+    created() {
+        this.automaticChange()
+    }
 })
