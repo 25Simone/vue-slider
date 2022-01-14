@@ -17,7 +17,7 @@
             <div class="immagine">
                 <img :src="images[currentIndex]" alt="carosello immagini casuali">
                 <span class="circles-container">
-                    <div class="circle" v-for="circle in images"></div>
+                    <div :class="['circle', i == currentIndex ? 'active' : 'disabled']" v-for="(circle, i) in images"></div>
                 </span>
             </div>
             <i @click='nextImg' class="fas fa-arrow-circle-right"></i>
