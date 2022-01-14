@@ -16,6 +16,9 @@
             <i @click='prevImg' class="fas fa-arrow-circle-left"></i>
             <div class="immagine">
                 <img :src="images[currentIndex]" alt="carosello immagini casuali">
+                <span class="circles-container">
+                    <div class="circle" v-for="circle in images"></div>
+                </span>
             </div>
             <i @click='nextImg' class="fas fa-arrow-circle-right"></i>
         </div>
