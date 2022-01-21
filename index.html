@@ -14,13 +14,15 @@
     <div id="app">
         <div class="carousel">
             <i @click='prevImg' class="fas fa-arrow-circle-left"></i>
+
             <div class="immagine">
                 <img :src="images[currentIndex]" alt="carosello immagini casuali">
                 <span class="circles-container">
-                    <div :class="['circle', i == currentIndex ? 'active' : 'disabled']" v-for="(circle, i) in images"></div>
+                    <div @click='goToImage(i)' :class="['circle', i == currentIndex ? 'active' : 'disabled']" v-for="(circle, i) in images"></div>
                 </span>
             </div>
-            <i @click='nextImg' class="fas fa-arrow-circle-right"></i>
+            
+            <i @mouseover='mouseOverFunction' @mouseleave='mouseLeaveFunction' @click='nextImg' class="fas fa-arrow-circle-right"></i>
         </div>
     </div>
     <script src="./js/script.js"></script>
